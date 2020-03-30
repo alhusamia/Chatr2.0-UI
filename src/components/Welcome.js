@@ -1,8 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,Redirect } from "react-router-dom";
+import {connect} from "react-redux"
 
-const Welcome = () => (
-  <header className="masthead d-flex">
+
+const Welcome = ({user}) => {
+  if(user) return <Redirect to="/private" />
+  return(<header className="masthead d-flex">
     <div className="container text-center my-auto z-1">
       <h1 className="mb-1">WELCOME TO CHATR</h1>
       <h3 className="mb-5">
@@ -13,7 +16,11 @@ const Welcome = () => (
       </Link>
     </div>
     <div className="overlay z-0" />
-  </header>
-);
+  </header>)
+  
+};
 
-export default Welcome;
+const mapStateToProps = ({ user }) => ({
+  user
+});
+export default connect(mapStateToProps) (Welcome);
