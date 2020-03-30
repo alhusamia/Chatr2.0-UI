@@ -4,10 +4,12 @@ import { combineReducers } from "redux";
 import userReducer from "./user";
 import errorReducer from "./errors";
 import messagesReducer from "./channel"
+import channelsReducer from "./channels";
 
 export default combineReducers({
   user: userReducer,
   errors: errorReducer,
-  messages:messagesReducer
+  messages:messagesReducer,
+  channels:channelsReducer
 });
 

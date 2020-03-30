@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import {fetchChannels} from "../../redux/actions"
 
 // Fontawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,7 +18,8 @@ class SideNav extends React.Component {
   state = { collapsed: false };
 
   render() {
-    const channelLinks = [{ name: "all" }].map(channel => (
+    const channels=this.props.fetchChannels;
+    const channelLinks = channels.map(channel => (
       <ChannelNavLink key={channel.name} channel={channel} />
     ));
     return (
@@ -52,4 +55,14 @@ class SideNav extends React.Component {
   }
 }
 
-export default SideNav;
+const mapStateToProps = state => {
+  return {
+    fetchChannels: state.channels.channels
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchChannels: () => dispatch(fetchChannels())
+  };
+};
+export default connect(mapStateToProps,mapDispatchToProps)(SideNav);
