@@ -1,11 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,Redirect } from "react-router-dom";
+
 
 // Components
 import SideNav from "./SideNav";
 import AuthButton from "./AuthButton";
+import { connect } from "react-redux";
 
-const NavBar = () => (
+const NavBar = ({user}) => (
   <nav
     className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
     id="mainNav"
@@ -13,6 +15,8 @@ const NavBar = () => (
     <Link className="navbar-brand" to="/welcome">
       Chatr2.0
     </Link>
+    {!user && <Redirect to="/welcome" />}
+    
     <button
       className="navbar-toggler navbar-toggler-right"
       type="button"
@@ -25,10 +29,12 @@ const NavBar = () => (
       <span className="navbar-toggler-icon" />
     </button>
     <div className="collapse navbar-collapse" id="navbarResponsive">
-      <SideNav />
+    {user && <SideNav />}  
       <AuthButton />
     </div>
   </nav>
 );
-
-export default NavBar;
+const mapStateToProps = ({ user }) => ({
+  user
+});
+export default connect(mapStateToProps)( NavBar);
