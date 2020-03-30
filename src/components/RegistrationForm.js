@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { signup, login } from "../redux/actions";
+import { connect } from "react-redux";
 
 class RegistationForm extends Component {
   state = {
@@ -13,7 +15,12 @@ class RegistationForm extends Component {
 
   submitHandler = e => {
     e.preventDefault();
-    alert("I don't work yet");
+    const type = this.props.match.url.substring(1);
+    {
+      type === "login"
+        ? this.props.login(this.state)
+        : this.props.signup(this.state);
+    }
   };
 
   render() {
@@ -22,6 +29,7 @@ class RegistationForm extends Component {
       <div className="card col-6 mx-auto p-0 mt-5">
         <div className="card-body">
           <h5 className="card-title mb-4">
+            checkout
             {type === "login"
               ? "Login to send messages"
               : "Register an account"}
@@ -66,5 +74,8 @@ class RegistationForm extends Component {
     );
   }
 }
-
-export default RegistationForm;
+const mapDispatchToProps = dispatch => ({
+  login: userData => dispatch(login(userData)),
+  signup: userData => dispatch(signup(userData))
+});
+export default connect(null, mapDispatchToProps)(RegistationForm);

@@ -3,6 +3,7 @@ import instance from "./instance";
 import { SET_CURRENT_USER } from "./actionTypes";
 
 import { setErrors } from "./errors";
+import decode from "jwt-decode";
 
 export const checkForExpiredToken = () => {
   const token = localStorage.getItem("token");
