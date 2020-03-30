@@ -21,6 +21,13 @@ export const checkForExpiredToken = () => {
   return setCurrentUser();
 };
 
+/**
+ *
+ * 30-03-20 @octowl
+ *
+ * You can combine the `login` and `signup` functions into a single function
+ */
+
 export const login = userData => async dispatch => {
   try {
     const res = await instance.post("/login/", userData);

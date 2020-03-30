@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link ,Redirect} from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { signup, login } from "../redux/actions";
 import { connect } from "react-redux";
 
@@ -13,10 +13,20 @@ class RegistationForm extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  /**
+   * 30-03-20 @octowl
+   *
+   * You can lose a lot of the logic by having a unified
+   * action function that takes the `type` as a second parameter
+   *
+   * e.g. `this.props.authenticate(this.state, type)`
+   */
+
   submitHandler = e => {
     e.preventDefault();
     const type = this.props.match.url.substring(1);
     {
+      // <--- what's this for? :/
       type === "login"
         ? this.props.login(this.state)
         : this.props.signup(this.state);
@@ -26,7 +36,7 @@ class RegistationForm extends Component {
   render() {
     const type = this.props.match.url.substring(1);
     const { errors } = this.props;
-    if(this.props.user ) return<Redirect to="/private" />
+    if (this.props.user) return <Redirect to="/private" />;
     return (
       <div className="card col-6 mx-auto p-0 mt-5">
         <div className="card-body">
@@ -37,13 +47,13 @@ class RegistationForm extends Component {
               : "Register an account"}
           </h5>
           <form onSubmit={this.submitHandler}>
-          {!!errors.length && (
-            <div className="alert alert-danger" role="alert">
-              {errors.map(error => (
-                <p key={error}>{error}</p>
-              ))}
-            </div>
-          )}
+            {!!errors.length && (
+              <div className="alert alert-danger" role="alert">
+                {errors.map(error => (
+                  <p key={error}>{error}</p>
+                ))}
+              </div>
+            )}
             <div className="form-group">
               <input
                 className="form-control"
@@ -80,7 +90,6 @@ class RegistationForm extends Component {
           </Link>
         </div>
       </div>
-      
     );
   }
 }

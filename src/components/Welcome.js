@@ -1,6 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+/**
+ * 30-03-20 @octowl
+ *
+ * This page should be PUBLIC-ONLY
+ * i.e. I shouldn't be able to get to it if I'm logged in
+ */
+
 const Welcome = () => (
   <header className="masthead d-flex">
     <div className="container text-center my-auto z-1">
