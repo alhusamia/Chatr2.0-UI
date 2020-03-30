@@ -29,7 +29,7 @@ export const login = userData => async dispatch => {
     setAuthToken(token);
     dispatch(setCurrentUser(token));
   } catch (error) {
-    dispatch(setErrors(error));
+    dispatch(setErrors(error.response.data));
   }
 };
 
@@ -40,7 +40,7 @@ export const signup = userData => async dispatch => {
     setAuthToken(token);
     dispatch(setCurrentUser(token));
   } catch (error) {
-    dispatch(setErrors(error));
+    dispatch(setErrors(error.response.data));
   }
 };
 

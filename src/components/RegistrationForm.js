@@ -25,6 +25,7 @@ class RegistationForm extends Component {
 
   render() {
     const type = this.props.match.url.substring(1);
+    const { errors } = this.props;
     return (
       <div className="card col-6 mx-auto p-0 mt-5">
         <div className="card-body">
@@ -35,6 +36,13 @@ class RegistationForm extends Component {
               : "Register an account"}
           </h5>
           <form onSubmit={this.submitHandler}>
+          {!!errors.length && (
+            <div className="alert alert-danger" role="alert">
+              {errors.map(error => (
+                <p key={error}>{error}</p>
+              ))}
+            </div>
+          )}
             <div className="form-group">
               <input
                 className="form-control"
@@ -74,8 +82,13 @@ class RegistationForm extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+    errors: state.errors.errors
+  };
+};
 const mapDispatchToProps = dispatch => ({
   login: userData => dispatch(login(userData)),
   signup: userData => dispatch(signup(userData))
 });
-export default connect(null, mapDispatchToProps)(RegistationForm);
+export default connect(mapStateToProps, mapDispatchToProps)(RegistationForm);
