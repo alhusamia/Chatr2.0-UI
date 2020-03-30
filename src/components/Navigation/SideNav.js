@@ -18,8 +18,7 @@ class SideNav extends React.Component {
   state = { collapsed: false };
 
   render() {
-    const channels=this.props.fetchChannels;
-    const channelLinks = channels.map(channel => (
+    const channelLinks = this.props.fetchChannels.map(channel => (
       <ChannelNavLink key={channel.name} channel={channel} />
     ));
     return (
@@ -57,12 +56,8 @@ class SideNav extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    fetchChannels: state.channels.channels
+    fetchChannels: state.channels
   };
 };
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchChannels: () => dispatch(fetchChannels())
-  };
-};
-export default connect(mapStateToProps,mapDispatchToProps)(SideNav);
+
+export default connect(mapStateToProps)(SideNav);
