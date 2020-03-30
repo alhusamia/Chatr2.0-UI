@@ -12,6 +12,7 @@ import {
 
 // Components
 import ChannelNavLink from "./ChannelNavLink";
+import { addChannel } from "../../redux/actions/channels";
 
 class SideNav extends React.Component {
   state = { collapsed: false };
@@ -56,7 +57,7 @@ class SideNav extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    channels: state.channels
+    channels: state.channels.channels
   };
 };
 
