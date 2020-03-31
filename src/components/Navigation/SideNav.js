@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import {fetchChannels} from "../../redux/actions"
 
 // Fontawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -18,9 +17,10 @@ class SideNav extends React.Component {
   state = { collapsed: false };
 
   render() {
-    const channelLinks = this.props.fetchChannels.map(channel => (
+    const channelLinks = this.props.channels.map(channel => (
       <ChannelNavLink key={channel.name} channel={channel} />
     ));
+    console.log(channelLinks, "Nthn");
     return (
       <div>
         <ul className="navbar-nav navbar-sidenav" id="exampleAccordion">
@@ -56,7 +56,7 @@ class SideNav extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    fetchChannels: state.channels
+    channels: state.channels
   };
 };
 
