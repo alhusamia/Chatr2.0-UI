@@ -15,7 +15,7 @@ class Channel extends Component {
     if (channelID !== props.match.params.channelID) {
       this.props.fetchChannel(channelID);
     } else {
-        this.props.fetchChannel(channelID);
+      this.props.fetchChannel(channelID);
     }
   }
 
@@ -27,16 +27,11 @@ class Channel extends Component {
       <div>
         {this.props.messages.map(message => {
             return (
-              <div>
-                <br />
-              
+            
                   <h2>{message.message}</h2>
-                </div>
-             
             );
           })
         }
-        <br />;
       </div>
     );
   }
