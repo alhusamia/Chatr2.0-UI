@@ -1,23 +1,31 @@
 import React from "react";
-import { Link,Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
+/*
+ *
+ * The minor changes in this file are from Prettier.
+ * Make sure you have it installed and activate "Format
+ * On Save" in settings. Ask for help if you need it on
+ * how to do this.
+ *
+ */
 
 // Components
 import SideNav from "./SideNav";
 import AuthButton from "./AuthButton";
 import { connect } from "react-redux";
 
-const NavBar = ({user}) => (
+const NavBar = ({ user }) => (
   <nav
     className="navbar navbar-expand-lg navbar-dark fixed-top"
-    style={{backgroundColor:"#01132B"}}
+    style={{ backgroundColor: "#01132B" }}
     id="mainNav"
   >
-    <Link className="navbar-brand"  to="/welcome">
+    <Link className="navbar-brand" to="/welcome">
       CODED LIVE Jo
     </Link>
     {!user && <Redirect to="/welcome" />}
-    
+
     <button
       className="navbar-toggler navbar-toggler-right"
       type="button"
@@ -29,8 +37,8 @@ const NavBar = ({user}) => (
     >
       <span className="navbar-toggler-icon" />
     </button>
-    <div className="collapse navbar-collapse"  id="navbarResponsive">
-    {user && <SideNav />}  
+    <div className="collapse navbar-collapse" id="navbarResponsive">
+      {user && <SideNav />}
       <AuthButton />
     </div>
   </nav>
@@ -38,4 +46,4 @@ const NavBar = ({user}) => (
 const mapStateToProps = ({ user }) => ({
   user
 });
-export default connect(mapStateToProps)( NavBar);
+export default connect(mapStateToProps)(NavBar);

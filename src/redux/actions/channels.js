@@ -54,6 +54,9 @@ export const addChannel = name => {
 export const addMessage = (message, channelID) => {
   return async dispatch => {
     try {
+      /*
+       * Remove the console logs you use to think while coding before merging to master.
+       */
       console.log(message, "message from the action");
 
       const res = await instance.post(`channels/${channelID}/send/`, message);

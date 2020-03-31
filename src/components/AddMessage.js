@@ -15,7 +15,13 @@ class AddMessage extends Component {
     this.setState({ message: "" });
   };
   render() {
-    console.log(this.state.message, this.props.channelID, "my console");
+    console.log(this.state.message, this.props.channelID, "my console"); // Remove console logs like this before merging to master.
+
+    /*
+     * onSubmit={event => this.onSubmitForm(event)}
+     * can be simplified to onSubmit={this.onSubmitForm}
+     * Same goes for the onChange below.
+     */
 
     return (
       <div className="col-12 col-sm-12 col-md-12 col-xl-12">
@@ -44,7 +50,6 @@ class AddMessage extends Component {
           </form>
         </div>
       </div>
-  
     );
   }
 }
