@@ -4,7 +4,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import AddMessage from "./AddMessage";
-import bg from "../assets/images/bg.jpg";
 import MessageList from "./MessageList";
 class Channel extends Component {
   componentDidMount() {

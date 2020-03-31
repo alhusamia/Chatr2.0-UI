@@ -13,7 +13,7 @@ const NavBar = ({ user }) => (
     id="mainNav"
   >
     <Link className="navbar-brand" to="/welcome">
-      CODED LIVE Jo
+      AYO Chat
     </Link>
     {!user && <Redirect to="/welcome" />}
 
