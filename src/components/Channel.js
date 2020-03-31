@@ -23,7 +23,9 @@ class Channel extends Component {
       }, 1000);
     }
   }
-
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
   render() {
     if (!this.props.user) return <Redirect to="/welcome" />;
     const messages = this.props.messages.map(message => (
