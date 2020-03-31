@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { fetchChannel } from "../../redux/actions";
 import SearchBar from "../SearchBar";
 
 // Fontawesome
@@ -32,11 +31,7 @@ class SideNav extends React.Component {
 
   render() {
     const channelLinks = this.filterChannels().map(channel => (
-      <ChannelNavLink
-        key={channel.name}
-        channel={channel}
-        onClick={this.props.fetchChannel()}
-      />
+      <ChannelNavLink key={channel.name} channel={channel} />
     ));
     return (
       <div>
@@ -78,10 +73,5 @@ const mapStateToProps = state => {
     channels: state.channels.channels
   };
 };
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchChannel: channelID => dispatch(fetchChannel(channelID))
-  };
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(SideNav);
+export default connect(mapStateToProps)(SideNav);

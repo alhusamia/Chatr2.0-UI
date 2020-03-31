@@ -18,7 +18,6 @@ export const fetchChannels = () => async dispatch => {
     });
   } catch (error) {
     console.error(error);
-    dispatch(setErrors(error));
   }
 };
 

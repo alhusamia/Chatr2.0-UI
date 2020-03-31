@@ -10,8 +10,7 @@ const store = createStore(
   rootReducer,
   composeEnhancers(applyMiddleware(thunk))
 );
+
 store.dispatch(checkForExpiredToken());
-store.dispatch(fetchChannels());
-store.dispatch(fetchChannel());
 
 export default store;

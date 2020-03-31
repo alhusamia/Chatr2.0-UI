@@ -3,9 +3,10 @@ import instance from "./instance";
 import { SET_CURRENT_USER } from "./actionTypes";
 
 import { setErrors } from "./errors";
+import { fetchChannels } from "./channels";
 import decode from "jwt-decode";
 
-export const checkForExpiredToken = () => {
+export const checkForExpiredToken = () => dispatch => {
   const token = localStorage.getItem("token");
 
   if (token) {
@@ -14,20 +15,20 @@ export const checkForExpiredToken = () => {
     const user = decode(token);
 
     if (user.exp >= currentTimeInSeconds) {
-      return setCurrentUser(token);
+      dispatch(setCurrentUser(token));
+      dispatch(fetchChannels());
     }
+  } else {
+    dispatch(setCurrentUser());
   }
-
-  return setCurrentUser();
 };
 
 export const login = userData => async dispatch => {
   try {
     const res = await instance.post("/login/", userData);
     const { token } = res.data;
-
-    setAuthToken(token);
     dispatch(setCurrentUser(token));
+    dispatch(fetchChannels());
   } catch (error) {
     dispatch(setErrors(error.response.data));
   }
@@ -37,8 +38,8 @@ export const signup = userData => async dispatch => {
   try {
     const res = await instance.post("/signup/", userData);
     const { token } = res.data;
-    setAuthToken(token);
     dispatch(setCurrentUser(token));
+    dispatch(fetchChannels());
   } catch (error) {
     dispatch(setErrors(error.response.data));
   }
