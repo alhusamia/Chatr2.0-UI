@@ -1,4 +1,4 @@
-import { fetchChannel, addMessage } from "../redux/actions";
+import { fetchChannel } from "../redux/actions";
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
@@ -8,31 +8,32 @@ import MessageList from "./MessageList";
 class Channel extends Component {
   componentDidMount() {
     this.interval = setInterval(() => {
-    const channelID = this.props.match.params.channelID;
-    this.props.fetchChannel(channelID);
-  }, 1000);
+      const channelID = this.props.match.params.channelID;
+      this.props.fetchChannel(channelID);
+    }, 1000);
   }
   componentDidUpdate(prevProps) {
-    
     let channelID = this.props.match.params.channelID;
     if (channelID !== prevProps.match.params.channelID) {
       this.props.fetchChannel(channelID);
+    } else {
+      clearInterval(this.interval);
+      this.interval = setInterval(() => {
+        this.props.fetchChannel(this.props.match.params.channelID);
+      }, 1000);
     }
   }
 
   render() {
     if (!this.props.user) return <Redirect to="/welcome" />;
     const messages = this.props.messages.map(message => (
-      <MessageList
-        key={`${message.id}`}
-        msg={message}
-      />
+      <MessageList key={`${message.id}`} msg={message} />
     ));
     return (
-      <div style={{color:"white"}}>
+      <div style={{ color: "white" }}>
         <div>{messages}</div>
-        <div className="mr-5">
-        <AddMessage channelID={this.props.match.params.channelID} />
+        <div className="mr-5 ">
+          <AddMessage channelID={this.props.match.params.channelID} />
         </div>
       </div>
     );
