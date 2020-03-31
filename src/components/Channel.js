@@ -4,10 +4,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import AddMessage from "./AddMessage";
-
 import bg from "../assets/images/bg.jpg";
 import MessageList from "./MessageList";
-
 class Channel extends Component {
   componentDidMount() {
     this.interval = setInterval(() => {
@@ -16,7 +14,7 @@ class Channel extends Component {
   }, 1000);
   }
   componentDidUpdate(prevProps) {
-   
+    
     let channelID = this.props.match.params.channelID;
     if (channelID !== prevProps.match.params.channelID) {
       this.props.fetchChannel(channelID);
@@ -32,21 +30,10 @@ class Channel extends Component {
       />
     ));
     return (
-
-      <div style={{ color: "white" }}>
-        <div>
-          {this.props.messages.map(message => {
-            return <h2>{message.message}</h2>;
-          })}
-        </div>
-        <div>
-          <AddMessage channelID={this.props.match.params.channelID} />
-
       <div style={{color:"white"}}>
         <div>{messages}</div>
         <div className="mr-5">
         <AddMessage channelID={this.props.match.params.channelID} />
-
         </div>
       </div>
     );
