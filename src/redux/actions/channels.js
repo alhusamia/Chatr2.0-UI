@@ -19,16 +19,17 @@ export const fetchChannels = () => async dispatch => {
 
 export const fetchChannel = channelID => async dispatch => {
   try {
-    const res = await instance.get(`channels/${channelID}`);
-    const channel = res.data;
+    const res = await instance.get(`channels/${channelID}/`);
+    const messages = res.data;
     dispatch({
       type: SET_CHANNEL,
-      payload: channel
+      payload: messages
     });
   } catch (error) {
     console.error(error);
   }
 };
+
 
 export const addChannel = name => {
   return async dispatch => {
