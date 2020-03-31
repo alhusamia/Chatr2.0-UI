@@ -9,11 +9,12 @@ import { connect } from "react-redux";
 
 const NavBar = ({user}) => (
   <nav
-    className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
+    className="navbar navbar-expand-lg navbar-dark fixed-top"
+    style={{backgroundColor:"#01132B"}}
     id="mainNav"
   >
-    <Link className="navbar-brand" to="/welcome">
-      Chatr2.0
+    <Link className="navbar-brand"  to="/welcome">
+      CODED LIVE Jo
     </Link>
     {!user && <Redirect to="/welcome" />}
     
@@ -28,7 +29,7 @@ const NavBar = ({user}) => (
     >
       <span className="navbar-toggler-icon" />
     </button>
-    <div className="collapse navbar-collapse" id="navbarResponsive">
+    <div className="collapse navbar-collapse"  id="navbarResponsive">
     {user && <SideNav />}  
       <AuthButton />
     </div>

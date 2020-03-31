@@ -5,7 +5,7 @@ import {connect} from "react-redux"
 
 const Welcome = ({user}) => {
   if(user) return <Redirect to="/private" />
-  return(<header className="masthead d-flex">
+  return(<header className="supersecret">
     <div className="container text-center my-auto z-1">
       <h1 className="mb-1">WELCOME TO CHATR</h1>
       <h3 className="mb-5">

@@ -17,7 +17,7 @@ class ChannelForm extends Component {
   render() {
     if (!this.props.user) return <Redirect to="/Welcome" />;
     return (
-      <div className="mt-5 p-2 secret">
+      <div className="p-2 supersecret">
         <p className="errorMessage">
           {this.props.errors ? this.props.errors : ""} <br />
         </p>
