@@ -32,7 +32,7 @@ class Channel extends Component {
     return (
       <div style={{color:"white"}}>
         <div>{messages}</div>
-        <div >
+        <div className="mr-5">
         <AddMessage channelID={this.props.match.params.channelID} />
         </div>
       </div>
