@@ -9,10 +9,11 @@ class ChannelForm extends Component {
   };
   submitChannel = event => {
     event.preventDefault();
-    this.props.addChannel(this.state, this.props.history);
+    this.props.addChannel(this.state);
   };
   onTextchange = event =>
     this.setState({ [event.target.name]: event.target.value });
+    
   render() {
     if (!this.props.user) return <Redirect to="/Welcome" />;
     return (

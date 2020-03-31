@@ -19,7 +19,7 @@ class SideNav extends React.Component {
 
   render() {
     const channelLinks = this.props.channels.map(channel => (
-      <ChannelNavLink key={channel.name} channel={channel} onClick={this.props.fetchChannel}/>
+      <ChannelNavLink key={channel.name} channel={channel} onClick={this.props.fetchChannel()}/>
     ));
     return (
       <div>
@@ -30,6 +30,7 @@ class SideNav extends React.Component {
               <FontAwesomeIcon icon={faPlusCircle} />
             </Link>
           </li>
+          
           {channelLinks}
         </ul>
         <ul className="navbar-nav sidenav-toggler">

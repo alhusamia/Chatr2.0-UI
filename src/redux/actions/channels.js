@@ -1,4 +1,9 @@
-import { SET_CHANNELS, SET_CHANNEL, ADD_CHANNEL } from "./actionTypes";
+import {
+  SET_CHANNELS,
+  SET_CHANNEL,
+  ADD_CHANNEL,
+  ADD_MESSAGE
+} from "./actionTypes";
 import { setErrors } from "./errors";
 
 import instance from "./instance";
@@ -30,7 +35,6 @@ export const fetchChannel = channelID => async dispatch => {
   }
 };
 
-
 export const addChannel = name => {
   return async dispatch => {
     try {
@@ -40,6 +44,24 @@ export const addChannel = name => {
       dispatch({
         type: ADD_CHANNEL,
         payload: newChannel
+      });
+    } catch (error) {
+      console.error(error);
+      console.error(error.response.data);
+    }
+  };
+};
+export const addMessage = (message, channelID) => {
+  return async dispatch => {
+    try {
+      console.log(message, "message from the action");
+
+      const res = await instance.post(`channels/${channelID}/send/`, message);
+      const newMessage = res.data;
+      console.log("mymessage", res.data);
+      dispatch({
+        type: ADD_MESSAGE,
+        payload: newMessage
       });
     } catch (error) {
       console.error(error);
