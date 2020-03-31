@@ -22,7 +22,7 @@ class SideNav extends React.Component {
       <ChannelNavLink key={channel.name} channel={channel} onClick={this.props.fetchChannel()}/>
     ));
     return (
-      <div>
+      <div >
         <ul className="navbar-nav navbar-sidenav" id="exampleAccordion">
           <li className="nav-item" data-toggle="tooltip" data-placement="right">
             <Link className="nav-link heading" to="/createChannel">

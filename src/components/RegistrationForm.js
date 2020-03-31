@@ -28,10 +28,9 @@ class RegistationForm extends Component {
     const { errors } = this.props;
     if(this.props.user ) return<Redirect to="/private" />
     return (
-      <div className="card col-6 mx-auto p-0 mt-5">
+      <div className="card col-6 mx-auto p-0 mt-5 supersecret">
         <div className="card-body">
           <h5 className="card-title mb-4">
-            checkout
             {type === "login"
               ? "Login to send messages"
               : "Register an account"}
@@ -75,8 +74,8 @@ class RegistationForm extends Component {
             className="btn btn-small btn-link"
           >
             {type === "login"
-              ? "register an account"
-              : "login with an existing account"}
+              ? "Register an account"
+              : "Login with an existing account"}
           </Link>
         </div>
       </div>

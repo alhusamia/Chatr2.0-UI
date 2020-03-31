@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import AddMessage from "./AddMessage";
-
+import bg from "../assets/images/bg.jpg"
 class Channel extends Component {
   componentDidMount() {
     const channelID = this.props.match.params.channelID;
@@ -24,13 +24,15 @@ class Channel extends Component {
     if (!this.props.user) return <Redirect to="/welcome" />;
 
     return (
-      <div className="channel">
+      <div style={{color:"white"}}>
         <div>
           {this.props.messages.map(message => {
             return <h2>{message.message}</h2>;
           })}
         </div>
+        <div >
         <AddMessage channelID={this.props.match.params.channelID} />
+        </div>
       </div>
     );
   }

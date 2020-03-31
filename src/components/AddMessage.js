@@ -19,11 +19,11 @@ class AddMessage extends Component {
 
     return (
       <div className="col-12 col-sm-12 col-md-12 col-xl-12">
-        <div className="form-group col-lg-12 col-12 ">
+        <div className="form-group col-lg-12 col-12  ">
           <form onSubmit={event => this.onSubmitForm(event)}>
             <div className="input-group my-3">
               <input
-                className="form-control"
+                className="form-control "
                 type="text"
                 name="message"
                 value={this.state.message}
@@ -44,6 +44,7 @@ class AddMessage extends Component {
           </form>
         </div>
       </div>
+  
     );
   }
 }
