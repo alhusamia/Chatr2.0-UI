@@ -8,17 +8,17 @@ import bg from "../assets/images/bg.jpg";
 import MessageList from "./MessageList";
 class Channel extends Component {
   componentDidMount() {
+    this.interval = setInterval(() => {
     const channelID = this.props.match.params.channelID;
     this.props.fetchChannel(channelID);
+  }, 1000);
   }
-  componentDidUpdate(props) {
+  componentDidUpdate(prevProps) {
+    
     let channelID = this.props.match.params.channelID;
-    if (channelID !== props.match.params.channelID) {
+    if (channelID !== prevProps.match.params.channelID) {
       this.props.fetchChannel(channelID);
     }
-    // else {
-    //   this.props.fetchChannel(channelID);
-    // }
   }
 
   render() {
