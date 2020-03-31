@@ -4,15 +4,15 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import AddMessage from "./AddMessage";
-import bg from "../assets/images/bg.jpg"
+
 class Channel extends Component {
   componentDidMount() {
     const channelID = this.props.match.params.channelID;
     this.props.fetchChannel(channelID);
   }
-  componentDidUpdate(props) {
+  componentDidUpdate(prevProps) {
     let channelID = this.props.match.params.channelID;
-    if (channelID !== props.match.params.channelID) {
+    if (channelID !== prevProps.match.params.channelID) {
       this.props.fetchChannel(channelID);
     }
     // else {
@@ -24,14 +24,14 @@ class Channel extends Component {
     if (!this.props.user) return <Redirect to="/welcome" />;
 
     return (
-      <div style={{color:"white"}}>
+      <div style={{ color: "white" }}>
         <div>
           {this.props.messages.map(message => {
             return <h2>{message.message}</h2>;
           })}
         </div>
-        <div >
-        <AddMessage channelID={this.props.match.params.channelID} />
+        <div>
+          <AddMessage channelID={this.props.match.params.channelID} />
         </div>
       </div>
     );
