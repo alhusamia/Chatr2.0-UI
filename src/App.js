@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 
-
 // Scripts
 import main from "./assets/js/main";
 

@@ -284,6 +284,7 @@ body.fixed-nav {
 
 #mainNav.fixed-top.navbar-dark .sidenav-toggler {
   background-color: #212529;
+  overflow-y: auto !important;
 }
 
 #mainNav.fixed-top.navbar-dark .sidenav-toggler a i {
@@ -389,6 +390,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 
 #mainNav.navbar-dark .navbar-collapse .navbar-sidenav .nav-link-collapse:after {
   color: #868e96;
+  overflow-y: auto !important;
 }
 
 #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item > .nav-link {
@@ -493,6 +495,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 @media (min-width: 992px) {
   #mainNav.navbar-dark .navbar-collapse .navbar-sidenav {
     background: #343a40;
+    overflow-y: auto !important;
   }
   #mainNav.navbar-dark .navbar-collapse .navbar-sidenav li.active a {
     color: white !important;
