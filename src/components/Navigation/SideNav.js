@@ -12,7 +12,6 @@ import {
 
 // Components
 import ChannelNavLink from "./ChannelNavLink";
-import { addChannel } from "../../redux/actions/channels";
 
 class SideNav extends React.Component {
   state = { collapsed: false };
@@ -21,7 +20,7 @@ class SideNav extends React.Component {
     const channelLinks = this.props.channels.map(channel => (
       <ChannelNavLink key={channel.name} channel={channel} />
     ));
-    console.log(channelLinks, "Nthn");
+
     return (
       <div>
         <ul className="navbar-nav navbar-sidenav" id="exampleAccordion">
@@ -30,8 +29,8 @@ class SideNav extends React.Component {
               <span className="nav-link-text mr-2">Channels</span>
               <FontAwesomeIcon icon={faPlusCircle} />
             </Link>
+            {channelLinks}
           </li>
-          {channelLinks}
         </ul>
         <ul className="navbar-nav sidenav-toggler">
           <li className="nav-item">
