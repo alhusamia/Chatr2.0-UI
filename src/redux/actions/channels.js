@@ -40,7 +40,7 @@ export const addChannel = name => {
     try {
       const res = await instance.post("channels/create/", name);
       const newChannel = res.data;
-      console.log("res", res.data);
+
       dispatch({
         type: ADD_CHANNEL,
         payload: newChannel
@@ -54,11 +54,9 @@ export const addChannel = name => {
 export const addMessage = (message, channelID) => {
   return async dispatch => {
     try {
-      console.log(message, "message from the action");
-
       const res = await instance.post(`channels/${channelID}/send/`, message);
       const newMessage = res.data;
-      console.log("mymessage", res.data);
+
       dispatch({
         type: ADD_MESSAGE,
         payload: newMessage
