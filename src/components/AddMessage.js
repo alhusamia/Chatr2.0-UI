@@ -15,8 +15,6 @@ class AddMessage extends Component {
     this.setState({ message: "" });
   };
   render() {
-    console.log(this.state.message, this.props.channelID, "my console");
-
     return (
       <div className="col-12 col-sm-12 col-md-12 col-xl-12">
         <div className="form-group col-lg-12 col-12  ">
@@ -44,7 +42,6 @@ class AddMessage extends Component {
           </form>
         </div>
       </div>
-  
     );
   }
 }
