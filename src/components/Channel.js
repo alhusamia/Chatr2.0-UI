@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import AddMessage from "./AddMessage";
-import MessageList from "./MessageList";
+import Message from "./Message";
 class Channel extends Component {
   componentDidMount() {
     this.interval = setInterval(() => {
@@ -29,7 +29,7 @@ class Channel extends Component {
   render() {
     if (!this.props.user) return <Redirect to="/welcome" />;
     const messages = this.props.messages.map(message => (
-      <MessageList key={`${message.id}`} msg={message} />
+      <Message key={`${message.id}`} msg={message} />
     ));
     return (
       <div style={{ color: "white" }}>

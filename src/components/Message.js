@@ -1,6 +1,6 @@
 import React from "react";
 
-const MessageList = props => {
+const Message = props => {
   return (
     <div className="px-3 py-3 mb-3 rounded-sm border border-white mr-5 ml-5">
       <small className="text-success">
@@ -15,4 +15,4 @@ const MessageList = props => {
     </div>
   );
 };
-export default MessageList;
+export default Message;
