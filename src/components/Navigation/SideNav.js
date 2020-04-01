@@ -35,7 +35,7 @@ class SideNav extends React.Component {
     ));
     return (
       <div>
-        <SearchBar className="float-right" onChange={this.setQuery} />
+        <SearchBar onChange={this.setQuery} />
         <ul className="navbar-nav navbar-sidenav" id="exampleAccordion">
           <li className="nav-item" data-toggle="tooltip" data-placement="right">
             

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link ,Redirect} from "react-router-dom";
 import { signup, login } from "../redux/actions";
 import { connect } from "react-redux";
+import bg from "../assets/images/bg.jpg"
 
 class RegistationForm extends Component {
   state = {
@@ -28,9 +29,10 @@ class RegistationForm extends Component {
     const { errors } = this.props;
     if(this.props.user ) return<Redirect to="/private" />
     return (
-      <div className="card col-6 mx-auto p-0 mt-5">
-        <div className="card-body">
-          <h5 className="card-title mb-4">
+      <div class="card col-8 mx-auto p-0 mt-5 bg-dark text-white text-center">
+         <img class="card-img" src={bg} alt="Card image"/>
+         <div class="card-img-overlay">
+          <h5 className="card-title mb-4 mt-5">
             {type === "login"
               ? "Login to send messages"
               : "Register an account"}
@@ -45,7 +47,7 @@ class RegistationForm extends Component {
           )}
             <div className="form-group">
               <input
-                className="form-control"
+                className="form-control mt-5 mb-4"
                 type="text"
                 placeholder="Username"
                 name="username"
@@ -54,7 +56,7 @@ class RegistationForm extends Component {
             </div>
             <div className="form-group">
               <input
-                className="form-control"
+                className="form-control mb-4"
                 type="password"
                 placeholder="Password"
                 name="password"
