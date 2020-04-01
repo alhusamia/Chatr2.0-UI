@@ -1,5 +1,11 @@
 import React from "react";
 
+/*
+ *
+ * This component displays a single message
+ * should be renamed to Message
+ *
+ */
 const MessageList = props => {
   return (
     <div className="px-3 py-3 mb-3 rounded-sm border border-white mr-5 ml-5">

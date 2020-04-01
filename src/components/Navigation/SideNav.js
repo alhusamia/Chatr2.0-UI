@@ -25,7 +25,7 @@ class SideNav extends React.Component {
   filterChannels = () => {
     const query = this.state.query.toLowerCase();
     return this.props.channels.filter(channel => {
-      return `${channel.name} `.toLowerCase().includes(query);
+      return `${channel.name} `.toLowerCase().includes(query); // Remove the space in the string here.
     });
   };
 
