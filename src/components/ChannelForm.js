@@ -13,42 +13,42 @@ class ChannelForm extends Component {
   };
   onTextchange = event =>
     this.setState({ [event.target.name]: event.target.value });
-    
+
   render() {
     if (!this.props.user) return <Redirect to="/Welcome" />;
     return (
       <div className="p-2 supersecret">
         <div className="container">
-        <p className="errorMessage">
-          {this.props.errors ? this.props.errors : ""} <br />
-        </p>
-        <form onSubmit={this.submitChannel}>
-          <div className="input-group mb-3">
-            <div className="input-group-prepend">
-              <span className="input-group-text">Name</span>
+          <p className="errorMessage">
+            {this.props.errors ? this.props.errors : ""} <br />
+          </p>
+          <form onSubmit={this.submitChannel}>
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text">Name</span>
+              </div>
+              <input
+                type="text"
+                className="form-control"
+                name="name"
+                onChange={this.onTextchange}
+              />
             </div>
-            <input
-              type="text"
-              className="form-control"
-              name="name"
-              onChange={this.onTextchange}
-            />
-          </div>
-          <div className="input-group mb-3">
-            <div className="input-group-prepend">
-              <span className="input-group-text">Image URL</span>
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text">Image URL</span>
+              </div>
+              <input
+                type="text"
+                className="form-control"
+                name="image_url"
+                onChange={this.onTextchange}
+              />
             </div>
-            <input
-              type="text"
-              className="form-control"
-              name="image_url"
-              onChange={this.onTextchange}
-            />
-          </div>
-          <button type="submit" className="btn btn-success">
-            Add
-          </button>
-        </form>
+            <button type="submit" className="btn btn-success">
+              Add
+            </button>
+          </form>
         </div>
       </div>
     );

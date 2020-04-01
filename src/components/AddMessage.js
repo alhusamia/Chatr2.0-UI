@@ -46,7 +46,7 @@ class AddMessage extends Component {
       <div className="col-12 col-sm-12 col-md-12 col-xl-12">
         <div className="form-group col-lg-12 col-12  ">
           <form onSubmit={event => this.onSubmitForm(event)}>
-            <div className="input-group my-3 ml-5">
+            <div className="input-group my-3 ml-5  ">
               <input
                 className="form-control "
                 type="text"
@@ -56,7 +56,7 @@ class AddMessage extends Component {
                 placeholder="Type a Message..."
               />
 
-              <span className="ml-3">
+              <span className="ml-2">
                 {this.state.showEmojis ? (
                   <span ref={el => (this.emojiPicker = el)}>
                     <Picker
