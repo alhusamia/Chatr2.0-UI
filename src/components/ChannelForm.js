@@ -17,7 +17,7 @@ class ChannelForm extends Component {
   render() {
     if (!this.props.user) return <Redirect to="/Welcome" />;
     return (
-      <header className="welcome">
+      <header className="welcome mr-4">
         <div className="container">
           <h3 className="display-4">Create new Channel</h3>
           <p className="errorMessage">
@@ -47,7 +47,7 @@ class ChannelForm extends Component {
               />
             </div>
             <button type="submit" className="btn btn-success" >
-              Add
+              Add Channel
             </button>
           </form>
         </div>
