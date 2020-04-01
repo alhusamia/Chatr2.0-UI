@@ -17,8 +17,9 @@ class ChannelForm extends Component {
   render() {
     if (!this.props.user) return <Redirect to="/Welcome" />;
     return (
-      <div className="p-2 supersecret">
+      <header className="welcome">
         <div className="container">
+          <h3 className="display-4">Create new Channel</h3>
           <p className="errorMessage">
             {this.props.errors ? this.props.errors : ""} <br />
           </p>
@@ -45,12 +46,12 @@ class ChannelForm extends Component {
                 onChange={this.onTextchange}
               />
             </div>
-            <button type="submit" className="btn btn-success">
+            <button type="submit" className="btn btn-success" >
               Add
             </button>
           </form>
         </div>
-      </div>
+      </header>
     );
   }
 }

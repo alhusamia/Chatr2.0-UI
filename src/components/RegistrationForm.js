@@ -28,7 +28,7 @@ class RegistationForm extends Component {
     const { errors } = this.props;
     if(this.props.user ) return<Redirect to="/private" />
     return (
-      <div className="card col-6 mx-auto p-0 mt-5 supersecret">
+      <div className="card col-6 mx-auto p-0 mt-5">
         <div className="card-body">
           <h5 className="card-title mb-4">
             {type === "login"
@@ -62,7 +62,7 @@ class RegistationForm extends Component {
               />
             </div>
             <input
-              className="btn btn-primary"
+              className="btn btn-success"
               type="submit"
               value={type.replace(/^\w/, c => c.toUpperCase())}
             />
@@ -71,7 +71,7 @@ class RegistationForm extends Component {
         <div className="card-footer">
           <Link
             to={type === "login" ? "/signup" : "/login"}
-            className="btn btn-small btn-link"
+            className="btn btn-small btn-link" style={{color:"#04c068"}}
           >
             {type === "login"
               ? "Register an account"

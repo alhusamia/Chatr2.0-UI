@@ -26,7 +26,7 @@ const ChannelNavLink = ({ channel }) => (
 
       <span className="nav-link-text"> {channel.name}</span>
       <br />
-      <small className="side"> Created by:{channel.owner}</small>
+      <small className="nav-link-text"> Created by:{channel.owner}</small>
     </NavLink>
   </li>
 );
