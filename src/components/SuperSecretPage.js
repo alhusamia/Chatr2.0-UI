@@ -10,9 +10,9 @@ const SuperSecretPage = ({ user }) => {
     <div className="supersecret">
       <h2 className="display-3">Welcome To Super Secret ChatRoom !!!</h2>
       <h3 className="display-4">Choose you channel or Create One !!!</h3>
-      <div className="container justify-content-right">
+      <span className="container justify-content-right">
         <ChatBott />
-      </div>
+      </span>
     </div>
   );
 };
