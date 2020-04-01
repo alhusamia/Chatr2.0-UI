@@ -92,7 +92,64 @@ body.fixed-nav {
 .z-1 {
   z-index: 1;
 }
-
+.speech-bubble {
+  position: relative;
+  background: #0e6465;
+  border-radius: 0.4em;
+  width: 80%;
+}
+.fixscroll {
+  word-wrap: break-word;
+}
+.speech-bubble:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 24px solid transparent;
+  border-right-color: #0e6465;
+  border-left: 0;
+  border-bottom: 0;
+  margin-top: -12px;
+  margin-left: -24px;
+}
+.no {
+  padding-left: 10px !important;
+  margin: 0px !important;
+}
+.shadow {
+  color: white;
+}
+.side {
+  padding-left: 25px;
+}
+.supersecret {
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  text-align: center;
+  color: white;
+}
+.channel-fix {
+  display: grid;
+  grid-template-rows: 20fr, 1fr;
+}
+.channel {
+  overflow-y: auto;
+  height: 33rem;
+  margin-left: 10%;
+}
+.text {
+  margin-left: 20%;
+  width: 85%;
+}
+.content-wrapper {
+  min-height: calc(100vh - 56px);
+  background-color: #01132b;
+}
 #mainNav .navbar-collapse {
   overflow: auto;
   max-height: 75vh;

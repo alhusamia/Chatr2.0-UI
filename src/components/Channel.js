@@ -1,6 +1,5 @@
 import { fetchChannel } from "../redux/actions";
 import React, { Component } from "react";
-
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import AddMessage from "./AddMessage";
@@ -10,7 +9,7 @@ class Channel extends Component {
     this.interval = setInterval(() => {
       const channelID = this.props.match.params.channelID;
       this.props.fetchChannel(channelID);
-    }, 1000);
+    }, 5000);
   }
   componentDidUpdate(prevProps) {
     let channelID = this.props.match.params.channelID;
@@ -20,7 +19,7 @@ class Channel extends Component {
       clearInterval(this.interval);
       this.interval = setInterval(() => {
         this.props.fetchChannel(this.props.match.params.channelID);
-      }, 1000);
+      }, 5000);
     }
   }
   componentWillUnmount() {
@@ -32,7 +31,7 @@ class Channel extends Component {
       <Message key={`${message.id}`} msg={message} />
     ));
     return (
-      <div style={{ color: "white" }}>
+      <div className="abc" style={{ color: "white" }}>
         <div className="channel">{messages}</div>
         <div className="mr-5 mb-0 mt-auto">
           <AddMessage channelID={this.props.match.params.channelID} />
@@ -41,18 +40,15 @@ class Channel extends Component {
     );
   }
 }
-
 const mapStateToProps = state => {
   return {
     user: state.user,
     messages: state.channels.messages
   };
 };
-
 const mapDispatchToProps = dispatch => {
   return {
     fetchChannel: channelID => dispatch(fetchChannel(channelID))
   };
 };
-
 export default connect(mapStateToProps, mapDispatchToProps)(Channel);

@@ -55,7 +55,6 @@ class AddMessage extends Component {
                 onChange={event => this.handleChange(event)}
                 placeholder="Type a Message..."
               />
-
               <span className="ml-2">
                 {this.state.showEmojis ? (
                   <span ref={el => (this.emojiPicker = el)}>
@@ -78,7 +77,6 @@ class AddMessage extends Component {
     );
   }
 }
-
 const mapDispatchToProps = dispatch => ({
   addMessage: (message, channelID) => dispatch(addMessage(message, channelID))
 });
