@@ -23,6 +23,9 @@ body.fixed-nav {
   padding-left: 10px !important;
   margin: 0px !important;
 }
+.shadow {
+  color: white;
+}
 .side {
   padding-left: 25px;
 }
@@ -36,11 +39,11 @@ body.fixed-nav {
 }
 .channel-fix {
   display: grid;
-  grid-template-rows: 4fr, 1fr;
+  grid-template-rows: 20fr, 1fr;
 }
 .channel {
   overflow-y: auto;
-  height: 200px;
+  height: 33rem;
 }
 
 .content-wrapper {
