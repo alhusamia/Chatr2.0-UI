@@ -4,7 +4,6 @@ import {
   ADD_CHANNEL,
   ADD_MESSAGE
 } from "./actionTypes";
-import { setErrors } from "./errors";
 
 import instance from "./instance";
 
