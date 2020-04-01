@@ -33,8 +33,8 @@ class Channel extends Component {
     ));
     return (
       <div style={{ color: "white" }}>
-        <div>{messages}</div>
-        <div className="mr-5 ">
+        <div className="channel">{messages}</div>
+        <div className="mr-5 mb-0 mt-auto">
           <AddMessage channelID={this.props.match.params.channelID} />
         </div>
       </div>
