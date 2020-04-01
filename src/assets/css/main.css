@@ -19,7 +19,13 @@ body.sticky-footer .content-wrapper {
 body.fixed-nav {
   padding-top: 56px;
 }
-
+.no {
+  padding-left: 10px !important;
+  margin: 0px !important;
+}
+.side {
+  padding-left: 25px;
+}
 .supersecret {
   background-image: url("../images/bg.jpg");
   background-size: cover;
