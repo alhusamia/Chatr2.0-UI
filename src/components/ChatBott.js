@@ -11,44 +11,29 @@ const ChatBott = () => {
       steps={[
         {
           id: "1",
-          message: "What is your name?",
+          message: "How can I help you?",
           trigger: "2"
         },
         {
           id: "2",
-          user: true,
-          trigger: "3"
-        },
-        {
-          id: "3",
-          message: "Hi {previousValue}, nice to meet you!",
-          trigger: "4"
-        },
-        {
-          id: "4",
-          message: "How can I help you?",
-          trigger: "5"
-        },
-        {
-          id: "5",
           options: [
-            { value: 1, label: "Add Channel", trigger: "6" },
-            { value: 2, label: "Find Channel", trigger: "7" },
-            { value: 3, label: "Nothing", trigger: "8" }
+            { value: 1, label: "Add Channel", trigger: "3" },
+            { value: 2, label: "Find Channel", trigger: "4" },
+            { value: 3, label: "Nothing", trigger: "5" }
           ]
         },
         {
-          id: "6",
+          id: "3",
           component: <Link to="/createChannel">Click Here</Link>,
-          end: true
+          trigger: "2"
         },
         {
-          id: "7",
+          id: "4",
           message: "You have a search bar on the right",
-          end: true
+          trigger: "2"
         },
         {
-          id: "8",
+          id: "5",
           message: "Have a good time!",
           end: true
         }

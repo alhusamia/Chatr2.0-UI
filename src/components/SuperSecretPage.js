@@ -10,7 +10,7 @@ const SuperSecretPage = ({ user }) => {
     <div className="supersecret">
       <h2 className="display-3">Welcome To Super Secret ChatRoom !!!</h2>
       <h3 className="display-4">Choose you channel or Create One !!!</h3>
-      <div className="d-flex justify-content-between">
+      <div className="container justify-content-right">
         <ChatBott />
       </div>
     </div>
