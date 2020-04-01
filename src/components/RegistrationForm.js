@@ -4,7 +4,7 @@ import { signup, login } from "../redux/actions";
 import { connect } from "react-redux";
 import bg from "../assets/images/bg.jpg"
 
-class RegistationForm extends Component {
+class RegistrationForm extends Component {
   state = {
     username: "",
     password: ""
@@ -95,4 +95,4 @@ const mapDispatchToProps = dispatch => ({
   login: userData => dispatch(login(userData)),
   signup: userData => dispatch(signup(userData))
 });
-export default connect(mapStateToProps, mapDispatchToProps)(RegistationForm);
+export default connect(mapStateToProps, mapDispatchToProps)(RegistrationForm);
