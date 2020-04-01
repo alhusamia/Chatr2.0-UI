@@ -56,19 +56,24 @@ class AddMessage extends Component {
                 placeholder="Type a Message..."
               />
               <span className="ml-2">
-                {this.state.showEmojis ? (
-                  <span ref={el => (this.emojiPicker = el)}>
-                    <Picker
-                      onSelect={this.addEmoji}
-                      emojiTooltip={true}
-                      title="Team AYO"
-                    />
-                  </span>
-                ) : (
-                  <p onClick={this.showEmojis}>
-                    {String.fromCodePoint(0x1f60a)}
-                  </p>
-                )}
+                <button>
+                  {this.state.showEmojis ? (
+                    <span ref={el => (this.emojiPicker = el)}>
+                      <Picker
+                        onSelect={this.addEmoji}
+                        emojiTooltip={true}
+                        title="Team AYO"
+                      />
+                    </span>
+                  ) : (
+                    <p
+                      onClick={this.showEmojis}
+                      style={{ marginBottom: "5px", marginTop: "3px" }}
+                    >
+                      {String.fromCodePoint(0x1f60a)}
+                    </p>
+                  )}
+                </button>
               </span>
             </div>
           </form>
