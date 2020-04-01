@@ -35,11 +35,11 @@ class SideNav extends React.Component {
     ));
     return (
       <div>
-        <SearchBar onChange={this.setQuery} />
+        <SearchBar className="float-right" onChange={this.setQuery} />
         <ul className="navbar-nav navbar-sidenav" id="exampleAccordion">
           <li className="nav-item" data-toggle="tooltip" data-placement="right">
             
-            <Link className="nav-link heading" to="/createChannel">
+            <Link style={{color:"#04c068"}} className="nav-link heading" to="/createChannel">
               <span className="nav-link-text mr-2">Channels</span>
               <FontAwesomeIcon icon={faPlusCircle} />
             </Link>

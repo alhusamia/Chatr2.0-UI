@@ -524,7 +524,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   .navbar-sidenav
   > .nav-item
   > .nav-link:hover {
-  border-left: 3px solid #800c0c;
+  border-left: 3px solid #04c068;
   color: #adb5bd;
 }
 
