@@ -13,7 +13,17 @@ const ChannelNavLink = ({ channel }) => (
     title={channel.name}
   >
     <NavLink className="nav-link" to={`/channels/${channel.id}`}>
-      <FontAwesomeIcon icon={faHashtag} />
+      {channel.image_url ? (
+        <img
+          src={channel.image_url}
+          width="25px"
+          height="25px"
+          style={{ borderRadius: "50%" }}
+        />
+      ) : (
+        <FontAwesomeIcon icon={faHashtag} />
+      )}
+
       <span className="nav-link-text"> {channel.name}</span>
       <br />
       <small className="side"> Created by:{channel.owner}</small>
