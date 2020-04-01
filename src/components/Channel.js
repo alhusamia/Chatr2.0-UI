@@ -27,7 +27,7 @@ class Channel extends Component {
   }
   render() {
     if (!this.props.user) return <Redirect to="/welcome" />;
-    const messages = this.props.messages.map(message => (
+    const messages = this.props.messages.map((message, index) => (
       <Message key={`${message.id}`} msg={message} user={this.props.user} />
     ));
     return (
