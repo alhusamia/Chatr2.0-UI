@@ -33,7 +33,7 @@ body.fixed-nav {
   background-image: url("../images/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100%;
+  height: 600px;
   text-align: center;
   color: white;
 }

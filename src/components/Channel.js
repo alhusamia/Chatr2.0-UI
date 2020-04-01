@@ -9,7 +9,7 @@ class Channel extends Component {
     this.interval = setInterval(() => {
       const channelID = this.props.match.params.channelID;
       this.props.fetchChannel(channelID);
-    }, 5000);
+    }, 3000);
   }
   componentDidUpdate(prevProps) {
     let channelID = this.props.match.params.channelID;
@@ -19,7 +19,7 @@ class Channel extends Component {
       clearInterval(this.interval);
       this.interval = setInterval(() => {
         this.props.fetchChannel(this.props.match.params.channelID);
-      }, 5000);
+      }, 3000);
     }
   }
   componentWillUnmount() {
