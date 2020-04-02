@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import { addMessage } from "../redux/actions";
 import "emoji-mart/css/emoji-mart.css";
 import { Picker } from "emoji-mart";
-import ReactGiphySearchbox from 'react-giphy-searchbox'
+import ReactGiphySearchbox from "react-giphy-searchbox";
 class AddMessage extends Component {
   state = {
     message: "",
     showEmojis: false,
-    showGif:false
+    showGif: false
   };
   showEmojis = e => {
     this.setState(
@@ -75,7 +75,7 @@ class AddMessage extends Component {
         <div className="form-group col-lg-12 col-12  ">
           <form onSubmit={event => this.onSubmitForm(event)}>
             <div className="input-group my-3 ml-5  ">
-            <div className="input-group-append">
+              <div className="input-group-append">
                 <span className="input-group-text">
                   {this.state.showEmojis ? (
                     <span ref={el => (this.emojiPicker = el)}>
@@ -94,7 +94,7 @@ class AddMessage extends Component {
                     </p>
                   )}
                 </span>
-                </div>
+              </div>
               <input
                 className="form-control "
                 type="text"
@@ -108,20 +108,16 @@ class AddMessage extends Component {
                   {this.state.showGif ? (
                     <span ref={el => (this.gifPicker = el)}>
                       <ReactGiphySearchbox
-    apiKey="bSJg47GJZuW3BkIpnk1M0wabPfVpNntc" 
-    onSelect={item => this.addGif(item.images.original.url)}
-  />
+                        apiKey="bSJg47GJZuW3BkIpnk1M0wabPfVpNntc"
+                        onSelect={item => this.addGif(item.images.original.url)}
+                      />
                     </span>
                   ) : (
-                    <p
-                      onClick={this.showGif}
-                      style={{ marginBottom: "0px" }}
-                    >
-                      {String.fromCodePoint(0x1f67)}
+                    <p onClick={this.showGif} style={{ marginBottom: "0px" }}>
+                      GIF
                     </p>
                   )}
                 </span>
-                
               </div>
             </div>
           </form>
