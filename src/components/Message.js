@@ -16,7 +16,7 @@ class Message extends Component {
           <h6>{this.props.msg.username}</h6>
         </small>
         {this.checkImageURL(this.props.msg.message) ? (
-          <img src={`${this.props.msg.message}`} width="50%" />
+          <img src={`${this.props.msg.message}`} width="35%" />
         ) : (
           <h5 className="text-left fixscroll">{this.props.msg.message}</h5>
         )}
