@@ -102,7 +102,7 @@ class AddMessage extends Component {
                   )}
                 </span>
               </div>
-              <divgit >
+              <div >
                 <span>
                   {this.state.showGif ? (
                     <span ref={el => (this.gifPicker = el)}>
