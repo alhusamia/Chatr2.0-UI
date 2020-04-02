@@ -73,8 +73,16 @@ class AddMessage extends Component {
         <div className="form-group col-lg-12 col-12  ">
           <form onSubmit={event => this.onSubmitForm(event)}>
             <div className="input-group my-3 ml-5  ">
-              <div className="input-group-append">
-                <span className="input-group-text">
+              <input
+                className="form-control "
+                type="text"
+                name="message"
+                value={this.state.message}
+                onChange={event => this.handleChange(event)}
+                placeholder="Type a Message..."
+              />
+              <div>
+                <span>
                   {this.state.showEmojis ? (
                     <span ref={el => (this.emojiPicker = el)}>
                       <Picker
@@ -84,25 +92,18 @@ class AddMessage extends Component {
                       />
                     </span>
                   ) : (
-                    <p
+                    <h3
+                      className="gift"
                       onClick={this.showEmojis}
-                      style={{ marginBottom: "0px" }}
+                      style={{ margin: "0px" }}
                     >
                       {String.fromCodePoint(0x1f60a)}
-                    </p>
+                    </h3>
                   )}
                 </span>
               </div>
-              <input
-                className="form-control "
-                type="text"
-                name="message"
-                value={this.state.message}
-                onChange={event => this.handleChange(event)}
-                placeholder="Type a Message..."
-              />
-              <div className="input-group-append">
-                <span className="input-group-text">
+              <divgit >
+                <span>
                   {this.state.showGif ? (
                     <span ref={el => (this.gifPicker = el)}>
                       <ReactGiphySearchbox
@@ -111,9 +112,13 @@ class AddMessage extends Component {
                       />
                     </span>
                   ) : (
-                    <p onClick={this.showGif} style={{ marginBottom: "0px" }}>
+                    <h3
+                      className="gift"
+                      onClick={this.showGif}
+                      style={{ marginBottom: "0px" }}
+                    >
                       GIF
-                    </p>
+                    </h3>
                   )}
                 </span>
               </div>
