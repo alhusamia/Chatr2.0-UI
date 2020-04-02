@@ -3,6 +3,10 @@ import ChatBot from "react-simple-chatbot";
 import { Link } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
+/**
+ * I'm interested to see where this goes
+ */
+
 const ChatBott = () => {
   const config = {
     width: "300px",
@@ -39,8 +43,6 @@ const ChatBott = () => {
               { value: 1, label: "Add Channel", trigger: "3" },
               { value: 2, label: "Find Channel", trigger: "4" },
               { value: 3, label: "Nothing", trigger: "5" }
-              
-            
             ]
           },
           {

@@ -15,6 +15,10 @@ const reducer = (state = initialState, action) => {
     case SET_CHANNELS:
       const channels = action.payload;
       return { ...state, channels: channels };
+
+    /**
+     * `SET_MESSAGES` might be a better name for this action
+     */
     case SET_CHANNEL:
       const messages = action.payload;
       return { ...state, messages: messages };

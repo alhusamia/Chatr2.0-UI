@@ -20,6 +20,9 @@ export const fetchChannels = () => async dispatch => {
   }
 };
 
+/**
+ * `fetchMessages` might be a better name for this function
+ */
 export const fetchChannel = channelID => async dispatch => {
   try {
     const res = await instance.get(`channels/${channelID}/`);

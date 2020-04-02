@@ -14,14 +14,14 @@ class Channel extends Component {
   componentDidUpdate(prevProps) {
     let channelID = this.props.match.params.channelID;
     if (channelID !== prevProps.match.params.channelID) {
-      this.props.fetchChannel(channelID);
-    } else {
       clearInterval(this.interval);
+      this.props.fetchChannel(channelID);
       this.interval = setInterval(() => {
         this.props.fetchChannel(this.props.match.params.channelID);
       }, 3000);
     }
   }
+
   componentWillUnmount() {
     clearInterval(this.interval);
   }

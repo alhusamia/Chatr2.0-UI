@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { addMessage } from "../redux/actions";
 import "emoji-mart/css/emoji-mart.css";
 import { Picker } from "emoji-mart";
-import ReactGiphySearchbox from 'react-giphy-searchbox'
+import ReactGiphySearchbox from "react-giphy-searchbox";
 class AddMessage extends Component {
   state = {
     message: "",
@@ -14,7 +14,7 @@ class AddMessage extends Component {
       {
         showEmojis: true
       },
-      () => document.addEventListener("click", this.closeMenu)
+      () => document.addEventListener("click", this.closeMenu) // <-- I don't like this - there should be a way to do this in react without using DOM manipulation
     );
   };
   addEmoji = e => {
@@ -84,9 +84,9 @@ class AddMessage extends Component {
                   )}
                 </span>
                 <ReactGiphySearchbox
-    apiKey="bSJg47GJZuW3BkIpnk1M0wabPfVpNntc" 
-    onSelect={item => this.addGif(item.images.original.url)}
-  />
+                  apiKey="bSJg47GJZuW3BkIpnk1M0wabPfVpNntc"
+                  onSelect={item => this.addGif(item.images.original.url)}
+                />
               </div>
             </div>
           </form>

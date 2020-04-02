@@ -9,6 +9,9 @@ class ChannelForm extends Component {
   };
   submitChannel = event => {
     event.preventDefault();
+    /**
+     * If you send the `history`, you can redirect the user to the channel they created
+     */
     this.props.addChannel(this.state);
   };
   onTextchange = event =>
@@ -46,7 +49,7 @@ class ChannelForm extends Component {
                 onChange={this.onTextchange}
               />
             </div>
-            <button type="submit" className="btn btn-success" >
+            <button type="submit" className="btn btn-success">
               Add Channel
             </button>
           </form>
