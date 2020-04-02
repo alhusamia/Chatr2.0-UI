@@ -4,8 +4,8 @@ const Message = props => {
     <div
       className={
         props.msg.username === props.user.username
-          ? `speech-bubble2 my-3 mx-5 pl-5 pt-2 pb-2`
-          : `speech-bubble my-3 mx-5 pl-5 pt-2 pb-2`
+          ? `speech-bubble2 my-3 mx-5 pl-4 pt-2 pb-2 pr-4`
+          : `speech-bubble my-3 mx-5 pl-4 pt-2 pb-2 pr-4`
       }
     >
       <small style={{ color: "#FFDB58" }}>

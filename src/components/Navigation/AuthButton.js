@@ -14,12 +14,12 @@ import {
 const AuthButton = ({ user, logout }) => {
   let buttons = [
     <li key="loginButton" className="nav-item">
-      <Link to="/login" className="nav-link">
+      <Link to="/login" style={{color:"#04c068"}} className="nav-link">
         <FontAwesomeIcon icon={faSignInAlt} /> Login
       </Link>
     </li>,
     <li key="signupButton" className="nav-item">
-      <Link to="/signup" className="nav-link">
+      <Link to="/signup" style={{color:"#04c068"}} className="nav-link">
         <FontAwesomeIcon icon={faUserPlus} /> Signup
       </Link>
     </li>
@@ -28,9 +28,9 @@ const AuthButton = ({ user, logout }) => {
   if (user) {
     buttons = (
       <>
-        <span className="nav-link shadow">{user.username}</span>
+        <span style={{color:"#04c068"}} className="nav-link shadow">{user.username}</span>
         <li className="nav-item">
-          <span className="nav-link" onClick={logout}>
+          <span style={{color:"#04c068"}} className="nav-link" onClick={logout}>
             <FontAwesomeIcon icon={faSignOutAlt} /> Logout
           </span>
         </li>

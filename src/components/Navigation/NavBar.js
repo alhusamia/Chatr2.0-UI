@@ -9,10 +9,10 @@ import { connect } from "react-redux";
 const NavBar = ({ user }) => (
   <nav
     className="navbar navbar-expand-lg navbar-dark fixed-top"
-    style={{ backgroundColor: "#01132B" }}
+    style={{ backgroundColor: "#051129" }}
     id="mainNav"
   >
-    <Link className="navbar-brand" to="/welcome">     
+    <Link style={{color:"#04c068"}}className="navbar-brand" to="/welcome">     
       AYO Chat
     </Link>
     {!user && <Redirect to="/welcome" />}

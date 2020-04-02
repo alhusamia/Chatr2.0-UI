@@ -12,7 +12,7 @@ const ChannelNavLink = ({ channel }) => (
     data-placement="right"
     title={channel.name}
   >
-    <NavLink className="nav-link" to={`/channels/${channel.id}`}>
+    <NavLink  style={{color:"#04c068"}} className="nav-link" to={`/channels/${channel.id}`}>
       {channel.image_url ? (
         <img
           src={channel.image_url}
@@ -26,7 +26,7 @@ const ChannelNavLink = ({ channel }) => (
 
       <span className="nav-link-text"> {channel.name}</span>
       <br />
-      <small className="side"> Created by:{channel.owner}</small>
+      <small className="nav-link-text"> Created by:{channel.owner}</small>
     </NavLink>
   </li>
 );

@@ -33,17 +33,26 @@ body.fixed-nav {
   background-image: url("../images/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 600px;
   text-align: center;
   color: white;
+  margin-top:5%;
+  padding-bottom:25%;
 }
-.channel-fix {
-  display: grid;
-  grid-template-rows: 20fr, 1fr;
+.welcome {
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: white;
+  padding-top:10%;
+  padding-bottom:15%;
 }
+
 .channel {
+  margin-top:2%;
   overflow-y: auto;
   height: 33rem;
+  background-image: url("../images/bg.jpg");
 }
 
 .content-wrapper {
@@ -94,14 +103,17 @@ body.fixed-nav {
 }
 .speech-bubble {
   position: relative;
-  background: #0e6465;
+  background: rgba(14,100,101,.8);
   border-radius: 0.4em;
   width: 80%;
   animation: bounceInLeft 1s;
 }
 .fixscroll {
   word-wrap: break-word;
+
 }
+
+
 .speech-bubble:after {
   content: "";
   position: absolute;
@@ -110,15 +122,16 @@ body.fixed-nav {
   width: 0;
   height: 0;
   border: 24px solid transparent;
-  border-right-color: #0e6465;
+  border-right-color:rgba(14,100,101,.8);
   border-left: 0;
   border-bottom: 0;
   margin-top: -12px;
   margin-left: -24px;
+  
 }
 .speech-bubble2 {
   position: relative;
-  background: #178054;
+  background: rgba(23,128,84,.8);
   border-radius: 0.4em;
   width: 80%;
   animation: bounceInRight 1s;
@@ -131,7 +144,7 @@ body.fixed-nav {
   width: 0;
   height: 0;
   border: 20px solid transparent;
-  border-left-color: #178054;
+  border-left-color: rgba(23,128,84,0.8);
   border-right: 0;
   border-bottom: 0;
   margin-top: -10px;
@@ -162,7 +175,8 @@ body.fixed-nav {
 .channel {
   overflow-y: auto;
   height: 33rem;
-  margin-left: 10%;
+  margin-left: 7%;
+  margin-right: 5%;
 }
 .text {
   margin-left: 20%;
@@ -425,6 +439,7 @@ body.sidenav-toggled #mainNav.fixed-top #sidenavToggler i {
 
 #mainNav.static-top .sidenav-toggler {
   display: none;
+  
 }
 
 @media (min-width: 992px) {
@@ -444,12 +459,13 @@ body.sidenav-toggled #mainNav.static-top #sidenavToggler i {
 
 .content-wrapper {
   overflow-x: hidden;
-  background: #01132b;
+  background-color: #01132b;
 }
 
 @media (min-width: 992px) {
   .content-wrapper {
     margin-left: 250px;
+    
   }
 }
 
@@ -508,7 +524,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   .navbar-sidenav
   > .nav-item
   > .nav-link:hover {
-  border-left: 3px solid #800c0c;
+  border-left: 3px solid #04c068;
   color: #adb5bd;
 }
 
@@ -537,7 +553,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   .navbar-sidenav
   > .nav-item
   > .nav-link.active {
-  border-left: 3px solid #800c0c;
+  border-left: 3px solid #04c068;
   color: #fff;
 }
 

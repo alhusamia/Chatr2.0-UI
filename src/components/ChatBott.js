@@ -12,7 +12,7 @@ const ChatBott = () => {
   const theme = {
     background: "white",
     fontFamily: "Arial, Helvetica, sans-serif",
-    headerBgColor: "#00B2B2",
+    headerBgColor: "#04c068",
     headerFontColor: "#fff",
     headerFontSize: "25px",
     botBubbleColor: "#01132b",
@@ -23,7 +23,7 @@ const ChatBott = () => {
   return (
     <ThemeProvider theme={theme}>
       <ChatBot
-        headerTitle="Speech Recognition"
+        headerTitle="HelpBot"
         // recognitionEnable={true}
         // speechSynthesis={{ enable: true, lang: "en" }}
         {...config}
@@ -39,6 +39,8 @@ const ChatBott = () => {
               { value: 1, label: "Add Channel", trigger: "3" },
               { value: 2, label: "Find Channel", trigger: "4" },
               { value: 3, label: "Nothing", trigger: "5" }
+              
+            
             ]
           },
           {
