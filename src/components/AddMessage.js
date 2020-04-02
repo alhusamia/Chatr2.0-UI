@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { addMessage } from "../redux/actions";
 import "emoji-mart/css/emoji-mart.css";
 import { Picker } from "emoji-mart";
+import ReactGiphySearchbox from 'react-giphy-searchbox'
 class AddMessage extends Component {
   state = {
     message: "",
@@ -22,6 +23,12 @@ class AddMessage extends Component {
       message: this.state.message + emoji
     });
   };
+  addGif = e => {
+    let gif = e;
+    this.setState({
+      message: this.state.message + gif
+    });
+  };
   closeMenu = e => {
     console.log(this.emojiPicker);
     if (this.emojiPicker !== null && !this.emojiPicker.contains(e.target)) {
@@ -33,6 +40,7 @@ class AddMessage extends Component {
       );
     }
   };
+
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
@@ -75,6 +83,10 @@ class AddMessage extends Component {
                     </p>
                   )}
                 </span>
+                <ReactGiphySearchbox
+    apiKey="bSJg47GJZuW3BkIpnk1M0wabPfVpNntc" 
+    onSelect={item => this.addGif(item.images.original.url)}
+  />
               </div>
             </div>
           </form>
