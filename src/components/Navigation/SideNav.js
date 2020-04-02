@@ -33,6 +33,7 @@ class SideNav extends React.Component {
     const channelLinks = this.filterChannels().map(channel => (
       <ChannelNavLink key={channel.name} channel={channel} />
     ));
+
     return (
       <div>
         <SearchBar onChange={this.setQuery} />

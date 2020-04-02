@@ -29,6 +29,7 @@ const NavBar = ({ user }) => (
       <span className="navbar-toggler-icon" />
     </button>
     <div className="collapse navbar-collapse" id="navbarResponsive">
+     
       {user && <SideNav />}
       <AuthButton />
     </div>
