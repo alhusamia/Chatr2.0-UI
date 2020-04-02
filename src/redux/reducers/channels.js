@@ -1,6 +1,6 @@
 import {
   SET_CHANNELS,
-  SET_CHANNEL,
+  SET_MESSAGES,
   ADD_CHANNEL,
   ADD_MESSAGE,
   CLEAR_MESSAGES
@@ -23,7 +23,7 @@ const reducer = (state = initialState, action) => {
     case CLEAR_MESSAGES:
       return { ...state, messages: [] };
 
-    case SET_CHANNEL:
+    case SET_MESSAGES:
       const newMessages = action.payload;
       return {
         ...state,

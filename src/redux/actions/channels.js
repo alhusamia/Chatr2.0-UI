@@ -1,6 +1,6 @@
 import {
   SET_CHANNELS,
-  SET_CHANNEL,
+  SET_MESSAGES,
   ADD_CHANNEL,
   ADD_MESSAGE
 } from "./actionTypes";
@@ -20,14 +20,14 @@ export const fetchChannels = () => async dispatch => {
   }
 };
 
-export const fetchChannel = (channelID, timestamp) => async dispatch => {
+export const fetchMessages = (channelID, timestamp) => async dispatch => {
   try {
     const res = await instance.get(
       `channels/${channelID}/?latest=${timestamp}`
     );
     const messages = res.data;
     dispatch({
-      type: SET_CHANNEL,
+      type: SET_MESSAGES,
       payload: messages
     });
   } catch (error) {
