@@ -59,7 +59,6 @@ class AddMessage extends Component {
       );
     }
   };
-
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
@@ -68,7 +67,6 @@ class AddMessage extends Component {
     this.props.addMessage(this.state, this.props.channelID);
     this.setState({ message: "" });
   };
-
   render() {
     return (
       <div className="col-12 col-sm-12 col-md-12 col-xl-12">
