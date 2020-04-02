@@ -27,7 +27,7 @@ const reducer = (state = initialState, action) => {
       const newMessages = action.payload;
       return {
         ...state,
-        messages: [...newMessages, ...state.messages]
+        messages: [...state.messages, ...newMessages]
       };
 
     case ADD_CHANNEL:
