@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Link ,Redirect} from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { signup, login } from "../redux/actions";
 import { connect } from "react-redux";
-import bg from "../assets/images/bg.jpg"
+import bg from "../assets/images/bg.jpg";
 
 class RegistrationForm extends Component {
   state = {
@@ -27,24 +27,24 @@ class RegistrationForm extends Component {
   render() {
     const type = this.props.match.url.substring(1);
     const { errors } = this.props;
-    if(this.props.user ) return<Redirect to="/private" />
+    if (this.props.user) return <Redirect to="/private" />;
     return (
       <div class="card col-8 mx-auto p-0 mt-5 bg-dark text-white text-center">
-         <img class="card-img" src={bg} alt="Card image"/>
-         <div class="card-img-overlay">
-          <h5 className="card-title mb-4 mt-5">
+        <img class="card-img" src={bg} alt="Card image" />
+        <div class="card-img-overlay">
+          <h5 className="card-title mb-4 mt-5 glow">
             {type === "login"
               ? "Login to send messages"
               : "Register an account"}
           </h5>
           <form onSubmit={this.submitHandler}>
-          {!!errors.length && (
-            <div className="alert alert-danger" role="alert">
-              {errors.map(error => (
-                <p key={error}>{error}</p>
-              ))}
-            </div>
-          )}
+            {!!errors.length && (
+              <div className="alert alert-danger" role="alert">
+                {errors.map(error => (
+                  <p key={error}>{error}</p>
+                ))}
+              </div>
+            )}
             <div className="form-group">
               <input
                 className="form-control mt-5 mb-4"
@@ -73,7 +73,8 @@ class RegistrationForm extends Component {
         <div className="card-footer">
           <Link
             to={type === "login" ? "/signup" : "/login"}
-            className="btn btn-small btn-link" style={{color:"#04c068"}}
+            className="btn btn-small btn-link glow"
+            style={{ color: "#04c068" }}
           >
             {type === "login"
               ? "Register an account"
@@ -81,7 +82,6 @@ class RegistrationForm extends Component {
           </Link>
         </div>
       </div>
-      
     );
   }
 }
