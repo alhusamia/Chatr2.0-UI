@@ -2,7 +2,8 @@ import {
   SET_CHANNELS,
   SET_CHANNEL,
   ADD_CHANNEL,
-  ADD_MESSAGE
+  ADD_MESSAGE,
+  CLEAR_MESSAGES
 } from "../actions/actionTypes";
 
 const initialState = {
@@ -14,10 +15,20 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_CHANNELS:
       const channels = action.payload;
-      return { ...state, channels: channels };
+      return {
+        ...state,
+        channels: channels
+      };
+
+    case CLEAR_MESSAGES:
+      return { ...state, messages: [] };
+
     case SET_CHANNEL:
-      const messages = action.payload;
-      return { ...state, messages: messages };
+      const newMessages = action.payload;
+      return {
+        ...state,
+        messages: [...newMessages, ...state.messages]
+      };
 
     case ADD_CHANNEL:
       return {

@@ -4,22 +4,26 @@ import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import AddMessage from "./AddMessage";
 import Message from "./Message";
+import { CLEAR_MESSAGES } from "../redux/actions/actionTypes";
 class Channel extends Component {
-  componentDidMount() {
+  getMessagesInterval() {
     this.interval = setInterval(() => {
+      const messages = this.props.messages;
+      let timestamp = "";
+      if (messages.length) timestamp = messages[messages.length - 1].timestamp;
       const channelID = this.props.match.params.channelID;
-      this.props.fetchChannel(channelID);
+      this.props.fetchChannel(channelID, timestamp);
     }, 3000);
+  }
+  componentDidMount() {
+    this.getMessagesInterval();
   }
   componentDidUpdate(prevProps) {
     let channelID = this.props.match.params.channelID;
     if (channelID !== prevProps.match.params.channelID) {
-      this.props.fetchChannel(channelID);
-    } else {
+      this.props.clearMessages();
       clearInterval(this.interval);
-      this.interval = setInterval(() => {
-        this.props.fetchChannel(this.props.match.params.channelID);
-      }, 3000);
+      this.getMessagesInterval();
     }
   }
   componentWillUnmount() {
@@ -48,7 +52,9 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    fetchChannel: channelID => dispatch(fetchChannel(channelID))
+    clearMessages: () => dispatch({ type: CLEAR_MESSAGES }),
+    fetchChannel: (channelID, timestamp) =>
+      dispatch(fetchChannel(channelID, timestamp))
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Channel);

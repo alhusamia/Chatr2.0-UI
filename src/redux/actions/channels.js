@@ -20,9 +20,11 @@ export const fetchChannels = () => async dispatch => {
   }
 };
 
-export const fetchChannel = channelID => async dispatch => {
+export const fetchChannel = (channelID, timestamp) => async dispatch => {
   try {
-    const res = await instance.get(`channels/${channelID}/`);
+    const res = await instance.get(
+      `channels/${channelID}/?latest=${timestamp}`
+    );
     const messages = res.data;
     dispatch({
       type: SET_CHANNEL,
