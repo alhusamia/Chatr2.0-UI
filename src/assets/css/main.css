@@ -23,6 +23,9 @@ body.fixed-nav {
   background-color: #01132b !important;
 }
 .hello {
+  animation: zoomInDown 1.2s;
+}
+.hello1 {
   animation: zoomInDown 1.5s;
 }
 .no {
