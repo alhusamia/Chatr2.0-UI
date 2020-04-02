@@ -7,7 +7,8 @@ import ReactGiphySearchbox from 'react-giphy-searchbox'
 class AddMessage extends Component {
   state = {
     message: "",
-    showEmojis: false
+    showEmojis: false,
+    showGif:false
   };
   showEmojis = e => {
     this.setState(
@@ -15,6 +16,14 @@ class AddMessage extends Component {
         showEmojis: true
       },
       () => document.addEventListener("click", this.closeMenu)
+    );
+  };
+  showGif = e => {
+    this.setState(
+      {
+        showGif: true
+      },
+      () => document.addEventListener("click", this.closemenu)
     );
   };
   addEmoji = e => {
@@ -40,6 +49,16 @@ class AddMessage extends Component {
       );
     }
   };
+  closemenu = e => {
+    if (this.gifPicker !== null && !this.gifPicker.contains(e.target)) {
+      this.setState(
+        {
+          showGif: false
+        },
+        () => document.removeEventListener("click", this.closemenu)
+      );
+    }
+  };
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
@@ -56,15 +75,7 @@ class AddMessage extends Component {
         <div className="form-group col-lg-12 col-12  ">
           <form onSubmit={event => this.onSubmitForm(event)}>
             <div className="input-group my-3 ml-5  ">
-              <input
-                className="form-control "
-                type="text"
-                name="message"
-                value={this.state.message}
-                onChange={event => this.handleChange(event)}
-                placeholder="Type a Message..."
-              />
-              <div className="input-group-append">
+            <div className="input-group-append">
                 <span className="input-group-text">
                   {this.state.showEmojis ? (
                     <span ref={el => (this.emojiPicker = el)}>
@@ -83,10 +94,34 @@ class AddMessage extends Component {
                     </p>
                   )}
                 </span>
-                <ReactGiphySearchbox
+                </div>
+              <input
+                className="form-control "
+                type="text"
+                name="message"
+                value={this.state.message}
+                onChange={event => this.handleChange(event)}
+                placeholder="Type a Message..."
+              />
+              <div className="input-group-append">
+                <span className="input-group-text">
+                  {this.state.showGif ? (
+                    <span ref={el => (this.gifPicker = el)}>
+                      <ReactGiphySearchbox
     apiKey="bSJg47GJZuW3BkIpnk1M0wabPfVpNntc" 
     onSelect={item => this.addGif(item.images.original.url)}
   />
+                    </span>
+                  ) : (
+                    <p
+                      onClick={this.showGif}
+                      style={{ marginBottom: "0px" }}
+                    >
+                      {String.fromCodePoint(0x1f67)}
+                    </p>
+                  )}
+                </span>
+                
               </div>
             </div>
           </form>
