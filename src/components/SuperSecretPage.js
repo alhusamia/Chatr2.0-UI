@@ -12,7 +12,7 @@ const SuperSecretPage = ({ user }) => {
       </div>
       <div className="hello1">
         <h3 className="display-5">Choose you channel or Create One !!!</h3>
-      </div>
+      </div>      
       <span className="container justify-content-right">
         <ChatBott />
       </span>
