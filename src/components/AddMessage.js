@@ -55,8 +55,8 @@ class AddMessage extends Component {
                 onChange={event => this.handleChange(event)}
                 placeholder="Type a Message..."
               />
-              <span className="ml-2">
-                <button>
+              <div className="input-group-append">
+                <span className="input-group-text">
                   {this.state.showEmojis ? (
                     <span ref={el => (this.emojiPicker = el)}>
                       <Picker
@@ -68,13 +68,13 @@ class AddMessage extends Component {
                   ) : (
                     <p
                       onClick={this.showEmojis}
-                      style={{ marginBottom: "5px", marginTop: "3px" }}
+                      style={{ marginBottom: "0px" }}
                     >
                       {String.fromCodePoint(0x1f60a)}
                     </p>
                   )}
-                </button>
-              </span>
+                </span>
+              </div>
             </div>
           </form>
         </div>
