@@ -1,4 +1,4 @@
-import { fetchChannel } from "../redux/actions";
+import { fetchMessages } from "../redux/actions";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
@@ -8,7 +8,7 @@ class Channel extends Component {
   componentDidMount() {
     this.interval = setInterval(() => {
       const channelID = this.props.match.params.channelID;
-      this.props.fetchChannel(channelID);
+      this.props.fetchMessages(channelID);
     }, 3000);
   }
   componentDidUpdate(prevProps) {
@@ -18,7 +18,7 @@ class Channel extends Component {
     } else {
       clearInterval(this.interval);
       this.interval = setInterval(() => {
-        this.props.fetchChannel(this.props.match.params.channelID);
+        this.props.fetchMessages(this.props.match.params.channelID);
       }, 3000);
     }
   }
@@ -48,7 +48,7 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    fetchChannel: channelID => dispatch(fetchChannel(channelID))
+    fetchMessages: channelID => dispatch(fetchMessages(channelID))
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Channel);
