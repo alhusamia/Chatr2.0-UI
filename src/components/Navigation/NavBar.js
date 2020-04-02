@@ -12,7 +12,11 @@ const NavBar = ({ user }) => (
     style={{ backgroundColor: "#051129" }}
     id="mainNav"
   >
-    <Link style={{color:"#04c068"}}className="navbar-brand" to="/welcome">     
+    <Link
+      style={{ color: "#04c068" }}
+      className="navbar-brand glow"
+      to="/welcome"
+    >
       AYO Chat
     </Link>
     {!user && <Redirect to="/welcome" />}
