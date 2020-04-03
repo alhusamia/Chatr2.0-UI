@@ -21,6 +21,7 @@ body.fixed-nav {
 }
 .gift:hover {
   animation: flip 1.3s;
+  cursor: pointer;
 }
 .m {
   margin-left: 38em;
