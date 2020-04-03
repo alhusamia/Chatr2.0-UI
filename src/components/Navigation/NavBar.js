@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
+import Clock from "../Clock";
 
 // Components
 import SideNav from "./SideNav";
@@ -13,12 +14,13 @@ const NavBar = ({ user }) => (
     id="mainNav"
   >
     <Link
-      style={{ color: "#04c068" }}
-      className="navbar-brand glow"
+      style={{ color: "#04c068", fontSize: "29px" }}
+      className="navbar-brand glow pt-0"
       to="/welcome"
     >
       AYO Chat
     </Link>
+
     {!user && <Redirect to="/welcome" />}
 
     <button
@@ -32,8 +34,8 @@ const NavBar = ({ user }) => (
     >
       <span className="navbar-toggler-icon" />
     </button>
+    <Clock />
     <div className="collapse navbar-collapse" id="navbarResponsive">
-     
       {user && <SideNav />}
       <AuthButton />
     </div>
