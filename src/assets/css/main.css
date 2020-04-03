@@ -22,6 +22,9 @@ body.fixed-nav {
 .gift:hover {
   animation: flip 1.3s;
 }
+.m {
+  margin-left: 38em;
+}
 .row {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
@@ -200,7 +203,7 @@ body.fixed-nav {
 }
 .channel {
   overflow-y: auto;
-  height: 33rem;
+  height: 35rem;
   margin-left: 7%;
   margin-right: 5%;
 }
