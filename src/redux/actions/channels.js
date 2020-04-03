@@ -35,16 +35,16 @@ export const fetchMessages = (channelID, timestamp) => async dispatch => {
   }
 };
 
-export const addChannel = name => {
+export const addChannel = (name, channelID, history) => {
   return async dispatch => {
     try {
       const res = await instance.post("channels/create/", name);
       const newChannel = res.data;
-
       dispatch({
         type: ADD_CHANNEL,
         payload: newChannel
       });
+      history.replace(`/channels/${channelID}`);
     } catch (error) {
       console.error(error);
       console.error(error.response.data);

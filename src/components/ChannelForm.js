@@ -9,7 +9,7 @@ class ChannelForm extends Component {
   };
   submitChannel = event => {
     event.preventDefault();
-    this.props.addChannel(this.state);
+    this.props.addChannel(this.state, this.props.channelID, this.props.history);
   };
   onTextchange = event =>
     this.setState({ [event.target.name]: event.target.value });
@@ -46,7 +46,7 @@ class ChannelForm extends Component {
                 onChange={this.onTextchange}
               />
             </div>
-            <button type="submit" className="btn btn-success" >
+            <button type="submit" className="btn btn-success">
               Add Channel
             </button>
           </form>
@@ -61,7 +61,8 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = dispatch => {
   return {
-    addChannel: newChannel => dispatch(addChannel(newChannel))
+    addChannel: (newChannel, channelID, history) =>
+      dispatch(addChannel(newChannel, channelID, history))
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ChannelForm);
