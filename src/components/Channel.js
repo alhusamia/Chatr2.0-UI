@@ -21,8 +21,9 @@ class Channel extends Component {
   }
   componentDidUpdate(prevProps) {
     let channelID = this.props.match.params.channelID;
-    let element= document.getElementById("last");
-    element.scrollIntoView({behavior:"smooth"});
+    let element = document.getElementById("last");
+    element.scrollIntoView({ behavior: "smooth" });
+
     if (channelID !== prevProps.match.params.channelID) {
       this.props.clearMessages();
       clearInterval(this.interval);
@@ -33,15 +34,20 @@ class Channel extends Component {
     clearInterval(this.interval);
   }
   render() {
-    if (!this.props.user) return <Redirect to="/welcome" />;
+    if (!this.props.user)
+      return (
+        <div id="last">
+          <Redirect to="/welcome" />
+        </div>
+      );
     const messages = this.props.messages.map((message, index) => (
       <Message key={`${message.id}`} msg={message} user={this.props.user} />
     ));
     return (
       <div className="abc" style={{ color: "white" }}>
         <div className="channel">
-        {messages}
-        <div id="last"></div>
+          {messages}
+          <div id="last"></div>
         </div>
         <div className="mr-5 mb-0 mt-auto">
           <AddMessage channelID={this.props.match.params.channelID} />
