@@ -21,14 +21,14 @@ class Clock extends Component {
 
   render() {
     return (
-      <div
+      <div className="ml-5"
         style={{
           color: "rgb(4, 192, 104)",
           textShadow:
             " 1px 1px 2px black, 0 0 25px rgb(245, 242, 242), 0 0 5px #7a7d80"
         }}
       >
-        <h3>{this.state.time.toLocaleTimeString()}.</h3>
+        <h3>{this.state.time.toLocaleTimeString()}</h3>
       </div>
     );
   }
