@@ -9,6 +9,7 @@ const Footer = () => (
           src="https://weareayo.org/assets/imges/icons/ayo-logo.png"
           width="40px"
           height="18px"
+          alt="logo"
         />
       </div>
     </div>
