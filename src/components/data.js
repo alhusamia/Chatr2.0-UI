@@ -56,7 +56,7 @@ const data = [
     img: Hedgehog,
   },
   {
-    id: "Kortoshka Fact",
+    id: "Kartoshka Fact",
     fact: "",
     img: Potato,
   },
@@ -66,7 +66,7 @@ const data = [
     img: Crazy,
   },
   {
-    id: "Traditional Jordanian sish",
+    id: "Traditional Jordanian dish",
     fact: "Because it's yummy",
     img: Mansaf,
   },
