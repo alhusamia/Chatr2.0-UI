@@ -75,7 +75,8 @@ const ChatBott = () => {
             options: [
               { value: 1, label: "Random Things", trigger: "14" },
               { value: 2, label: "Listen to music", trigger: "8" },
-              { value: 3, label: "Idk", trigger: "15" },
+              { value: 3, label: "Play a game", trigger: "16" },
+              { value: 4, label: "Idk", trigger: "15" },
             ],
           },
           {
@@ -153,6 +154,53 @@ const ChatBott = () => {
             id: "15",
             message: "Stop nagging and go chat with your friends!",
             end: true,
+          },
+          {
+            id: "16",
+            options: [
+              { value: 1, label: "Guacamole", trigger: "17" },
+              { value: 2, label: "Tic Tac Toe", trigger: "18" },
+              { value: 3, label: "Bebsi Man", trigger: "19" },
+            ],
+          },
+          {
+            id: "17",
+            component: (
+              <a
+                href="https://guacamole-game.netlify.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Holy Guacamole
+              </a>
+            ),
+            trigger: "7",
+          },
+          {
+            id: "18",
+            component: (
+              <a
+                href="https://tic-tac-toe-y.netlify.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Tik Tac Toe
+              </a>
+            ),
+            trigger: "7",
+          },
+          {
+            id: "19",
+            component: (
+              <a
+                href="https://moe9195.github.io/whack-a-bebsi/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Whack-A-Bebsi
+              </a>
+            ),
+            trigger: "7",
           },
         ]}
       />
